@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@100;300;400;500;600;700&display=swap");
+
+// Config
+@import "abstracts/variables", "abstracts/placeholders", "abstracts/mixins";
+
+// Base
+@import "base/base", "base/typography";
+
+// Layout
+@import "./layout/header";
+
+// Components
+
+// Pages
+
+//Vendor
+@import "./vendor/owl.carousel";
