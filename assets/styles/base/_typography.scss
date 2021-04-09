@@ -1,15 +1,14 @@
 .h1,
 .h2,
 .h3 {
-	@include fo;
-	font-weight: 600;
+	@include fc;
+	font-weight: 500;
 }
-
 .h4,
 .h5,
 .h6 {
-	@include fo;
-	font-weight: 500;
+	@include fc;
+	font-weight: 600;
 }
 
 .h1 {
