@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<section class="register container">
+  <h2 class="h2">Inscription</h2>
+  <form action="post" class="form">
+  <div class="form_control">
+    <div class="form_group">
+      {{ form_label(form.firstname) }}
+      {{ form_widget(form.firstname) }}
+      {{ form_errors(form.firstname) }}
+    </div>
+    <div class="form_group">
+      {{ form_label(form.lastname) }}
+      {{ form_widget(form.lastname) }}
+      {{ form_errors(form.lastname) }}
+    </div>
+  </div>
+  <div class="form_control">
+    <div class="form_group">
+      {{ form_label(form.email) }}
+      {{ form_widget(form.email) }}
+      {{ form_errors(form.email) }}
+    </div>
+    <div class="form_group">
+      {{ form_label(form.password) }}
+      {{ form_widget(form.password) }}
+      {{ form_errors(form.password) }}
+    </div>
+  </div>
+  <div class="form_group">
+    <button type="submit" class="btn btn_white">Valider</button>
+    <span class="error_input"></span>
+  </div>
+  </form>
+</section>
+{% endblock %}

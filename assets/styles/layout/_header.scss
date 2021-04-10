@@ -16,6 +16,9 @@
 		@include c {
 			margin: 0 auto;
 		}
+		a {
+			color: inherit;
+		}
 	}
 	&_burger {
 		@extend %flex_col;

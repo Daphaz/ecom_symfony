@@ -1,0 +1,12 @@
+.register {
+	width: 100%;
+	height: 100vh;
+	@extend %flex_center;
+	flex-direction: column;
+	h2 {
+		margin-bottom: 3rem;
+		@include v {
+			font-size: 3rem;
+		}
+	}
+}
