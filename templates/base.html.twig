@@ -2,6 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="my first project symfony">
+        <meta name="author" content="daphaz">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
@@ -68,7 +71,48 @@
           {% block body %}{% endblock %}
         </div>
       </main>
-
+      <footer class="footer container">
+        <div class="footer_links">
+          <ul class="compte">
+            <li class="footer_label">Compte</li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+          <ul class="contact">
+          <li class="footer_label">Contact</li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+          <ul class="categories">
+            <li class="footer_label">Categories</li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+        </div>
+        <div class="footer_social">
+          <div class="phone">
+            <p>+33 00 11 22 33 44</p>
+          </div>
+          <div class="social_list">
+            <div class="social_item">
+              <img src={{asset('/images/insta.svg')}} alt="instagram logo" width="20px" height="20px">
+            </div>
+            <div class="social_item">
+              <img src={{asset('/images/facebook.svg')}} alt="facebook logo" width="20px" height="20px">
+            </div>
+            <div class="social_item">
+              <img src={{asset('/images/email.svg')}} alt="email" width="20px" height="20px">
+            </div>
+          </div>
+        </div>
+        <div class="footer_copy">Lorem, ipsum dolor 2021</div>
+      </footer>
       {{ encore_entry_script_tags('app') }}
       {% block javascripts %}{% endblock %}
     </body>
