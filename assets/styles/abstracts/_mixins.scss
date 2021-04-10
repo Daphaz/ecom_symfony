@@ -20,22 +20,22 @@
 
 //breakpoint
 @mixin w {
-	@media only screen and (max-width: "1419px") {
+	@media screen and (max-width: "1419px") {
 		@content;
 	}
 }
 @mixin x {
-	@media only screen and (max-width: "1023px") {
+	@media screen and (max-width: "1023px") {
 		@content;
 	}
 }
 @mixin c {
-	@media only screen and (max-width: "767px") {
+	@media screen and (max-width: "767px") {
 		@content;
 	}
 }
 @mixin v {
-	@media only screen and (max-width: "474px") {
+	@media screen and (max-width: "474px") {
 		@content;
 	}
 }

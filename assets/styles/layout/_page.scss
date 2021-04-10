@@ -4,4 +4,5 @@ body {
 	@include fo;
 	font-size: 1.4rem;
 	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
 }

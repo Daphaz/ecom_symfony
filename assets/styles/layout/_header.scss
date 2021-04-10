@@ -1,7 +1,14 @@
 .header {
+	position: fixed;
+	width: 100%;
 	padding: 0 12.8rem;
-	background-color: $white;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 8px 32px 0 rgba(238, 181, 203, 0.37);
+	backdrop-filter: blur(4.5px);
+	-webkit-backdrop-filter: blur(4.5px);
 	transition: padding 0.3s ease;
+	z-index: 10;
 	@include w {
 		padding: 0 6.4rem;
 	}
@@ -94,7 +101,7 @@
 		position: relative;
 		width: 90%;
 		background-color: $white;
-		z-index: 1;
+		z-index: 20;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 		.close {
 			position: absolute;
@@ -132,7 +139,7 @@
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.6);
-	z-index: 1;
+	z-index: 15;
 	transform: translateX(-100%);
 	transition: transform 0.3s ease-in-out;
 	@include c {
