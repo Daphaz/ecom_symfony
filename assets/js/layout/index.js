@@ -1,0 +1,2 @@
+//menu
+import "./menu";
