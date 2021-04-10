@@ -24,6 +24,11 @@
 		@content;
 	}
 }
+@mixin q {
+	@media screen and (max-width: "1235px") {
+		@content;
+	}
+}
 @mixin x {
 	@media screen and (max-width: "1023px") {
 		@content;
