@@ -3,15 +3,73 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+      <div class="bg_mobile" id="mobile" >
+        <div class="header_mobile">
+          <button class="close" id="closeMenu">
+            <img src="{{ asset('/images/close.svg') }}" alt="close" width="60px" height="60px">
+          </button>
+          <ul class="menu">
+            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
+            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
+            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
+            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
+            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
+            <li class="actions">
+            <div class="globe">
+              <a href="#" class="item_mobile">
+              <img src="{{ asset('/images/globe.svg')}}" alt="globe" width="50px" height="50px"/>
+              </a>
+            </div> 
+            <div class="panier">
+              <a href="#" class="item_mobile">
+              <img src="{{ asset('/images/panier.svg')}}" alt="panier" width="50px" height="50px"/>
+              </a>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="header">
+          <div class="header_container">
+            <div class="header_burger" id="burger" >
+              <span></span>
+              <span></span>
+            </div>
+            <div class="header_logo">Logo</div>
+            <nav class="header_navbar">
+              <ul class="header_navlist">
+                <li class="header_navitem"><a href="#">Lorem</a></li>
+                <li class="header_navitem"><a href="#">Lorem</a></li>
+                <li class="header_navitem"><a href="#">Lorem</a></li>
+                <li class="header_navitem"><a href="#">Lorem</a></li>
+                <li class="header_navitem"><a href="#">Lorem</a></li>
+              </ul>
+            </nav>
+            <div class="header_actions">
+            <div class="globe">
+              <a href="#">
+              <img src="{{ asset('/images/globe.svg')}}" alt="globe" width="25px" height="25px"/>
+              </a>
+            </div> 
+            <div class="panier">
+              <a href="#">
+              <img src="{{ asset('/images/panier.svg')}}" alt="panier" width="25px" height="25px"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="warpper">
+          {% block body %}{% endblock %}
+        </div>
+      </main>
+
+      {{ encore_entry_script_tags('app') }}
+      {% block javascripts %}{% endblock %}
     </body>
 </html>

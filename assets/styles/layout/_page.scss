@@ -1,0 +1,7 @@
+body {
+	background-color: $gray;
+	color: $gray-dark;
+	@include fo;
+	font-size: 1.4rem;
+	min-height: 100vh;
+}

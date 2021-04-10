@@ -1,0 +1,144 @@
+.header {
+	padding: 0 12.8rem;
+	background-color: $white;
+	transition: padding 0.3s ease;
+	@include w {
+		padding: 0 6.4rem;
+	}
+	@include x {
+		padding: 0 3.2rem;
+	}
+	@include c {
+		padding: 0 1.6rem;
+	}
+	&_container {
+		@extend %flex_between;
+		min-height: 7rem;
+	}
+	&_logo {
+		@include c {
+			margin: 0 auto;
+		}
+	}
+	&_burger {
+		@extend %flex_col;
+		display: none;
+		cursor: pointer;
+		position: absolute;
+		width: 25px;
+		height: 35px;
+		justify-content: center;
+		align-items: center;
+		span {
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: $gray-dark;
+			border-radius: 999px;
+			@include nl {
+				margin-bottom: 0.5rem;
+			}
+		}
+		@include c {
+			display: flex;
+		}
+	}
+	&_navbar {
+		margin: 0 3.2rem;
+		@include c {
+			display: none;
+		}
+	}
+	&_navlist {
+		@extend %flex_center;
+	}
+	&_navitem {
+		font-size: 1.6rem;
+		&:not(:last-child) {
+			margin-right: 4.8rem;
+		}
+		a {
+			position: relative;
+			color: inherit;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				right: 0;
+				width: 0;
+				height: 2px;
+				margin-top: 5px;
+				background-color: $gray-dark;
+				transition: 0.4s ease;
+			}
+			&:hover {
+				&:after {
+					width: 100%;
+					left: 0;
+					background-color: $gray-dark;
+				}
+			}
+		}
+	}
+	&_actions {
+		@extend %flex_center;
+		@include c {
+			display: none;
+		}
+		.globe {
+			margin: 0 2rem;
+		}
+	}
+
+	&_mobile {
+		position: relative;
+		width: 90%;
+		background-color: $white;
+		z-index: 1;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		.close {
+			position: absolute;
+			top: 1.6rem;
+			right: 2rem;
+			width: 6rem;
+			height: 6rem;
+		}
+		.menu {
+			@extend %flex_col;
+			width: 100%;
+			height: 100%;
+			padding: 6rem 2.4rem 2.4rem;
+			.header_navitem {
+				font-size: 4rem;
+			}
+			.actions {
+				@extend %flex_center;
+				margin-top: auto;
+				align-self: flex-end;
+				.globe {
+					margin-right: 2rem;
+				}
+			}
+		}
+	}
+}
+.bg_mobile {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease-in-out;
+	@include c {
+		display: flex;
+	}
+	&.active {
+		transform: translateX(0%);
+	}
+}
