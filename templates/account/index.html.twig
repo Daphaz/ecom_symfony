@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block body %}
+<section class="account container">
+<h1 class="h1">Mon Compte</h1>
+<div class="account_subtitle">
+  <p>Bienvenue {{ app.user.firstname }} dans votre compte. C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.</p>
+</div>
+- Modifier le mot de passe
+- Ajouter mes adresse
+- Gérer mes commandes
+</section>
+{% endblock %}
