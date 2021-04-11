@@ -19,6 +19,11 @@
 			background-color: $gray;
 			padding: 0.5rem 1rem;
 			border-radius: 5px;
+			&:disabled {
+				background-color: $gray-dark;
+				color: $white;
+				cursor: not-allowed;
+			}
 		}
 		&.last {
 			margin-bottom: 4rem;
