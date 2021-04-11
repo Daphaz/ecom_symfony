@@ -5,7 +5,7 @@
 @import "abstracts/variables", "abstracts/placeholders", "abstracts/mixins";
 
 // Base
-@import "base/base", "base/typography", "base/form";
+@import "base/base", "base/typography", "base/form", "base/alert";
 
 // Layout
 @import "./layout/page", "./layout/header", "./layout/footer";
