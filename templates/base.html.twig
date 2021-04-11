@@ -16,16 +16,23 @@
             <img src="{{ asset('/images/close.svg') }}" alt="close" width="60px" height="60px">
           </button>
           <ul class="menu">
-            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
-            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
-            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
-            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
-            <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
+            {% if app.user %}
+            <li class="header_navitem item_mobile"><a href={{ path('home') }}>Home</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Compte</a></li>
+            {% else %}
+            <li class="header_navitem item_mobile"><a href={{ path('home') }}>Home</a></li>
+            {% endif %}
             <li class="actions">
             <div class="globe">
-              <a href="/inscription" class="item_mobile">
-              <img src="{{ asset('/images/user.svg')}}" alt="user" width="50px" height="50px"/>
+              {% if app.user %}
+              <a href={{ path('app_logout') }} class="item_mobile">
+              <img src="{{ asset('/images/logout.svg')}}" alt="deconnexion" width="50px" height="50px"/>
               </a>
+              {% else %}
+              <a href={{ path('app_login') }} class="item_mobile">
+              <img src="{{ asset('/images/user.svg')}}" alt="connexion" width="50px" height="50px"/>
+              </a>
+              {% endif %}
             </div> 
             <div class="panier">
               <a href="#" class="item_mobile">
@@ -42,21 +49,31 @@
               <span></span>
               <span></span>
             </div>
-            <div class="header_logo"><a href="/">Logo</a></div>
+            <div class="header_logo"><a href={{ path('home') }}>Logo</a></div>
             <nav class="header_navbar">
               <ul class="header_navlist">
+                {% if app.user %}
+                <li class="header_navitem"><a href={{ path('home') }}>Home</a></li>
+                <li class="header_navitem"><a href={{ path('account') }}>Compte</a></li>
                 <li class="header_navitem"><a href="#">Lorem</a></li>
                 <li class="header_navitem"><a href="#">Lorem</a></li>
                 <li class="header_navitem"><a href="#">Lorem</a></li>
-                <li class="header_navitem"><a href="#">Lorem</a></li>
-                <li class="header_navitem"><a href="#">Lorem</a></li>
+                {% else %}
+                <li class="header_navitem"><a href={{ path('home') }}>Home</a></li>
+                {% endif %}
               </ul>
             </nav>
             <div class="header_actions">
             <div class="globe">
-              <a href="/inscription">
-              <img src="{{ asset('/images/user.svg')}}" alt="user" width="25px" height="25px"/>
+              {% if app.user %}
+              <a href={{ path('app_logout') }}>
+              <img src="{{ asset('/images/logout.svg')}}" alt="deconnexion" width="25px" height="25px"/>
               </a>
+              {% else %}
+              <a href={{ path('app_login') }}>
+              <img src="{{ asset('/images/user.svg')}}" alt="connexion" width="25px" height="25px"/>
+              </a>
+              {% endif %}
             </div> 
             <div class="panier">
               <a href="#">
