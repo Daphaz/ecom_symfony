@@ -5,7 +5,7 @@
 {% block body %}
 <section class="register container">
   <h2 class="h2">Inscription</h2>
-  <form action="post" class="form">
+  {{ form_start(form,{'attr': {'class': 'form'}}) }}
   <div class="form_control">
     <div class="form_group">
       {{ form_label(form.firstname) }}
@@ -25,15 +25,19 @@
       {{ form_errors(form.email) }}
     </div>
     <div class="form_group">
-      {{ form_label(form.password) }}
-      {{ form_widget(form.password) }}
-      {{ form_errors(form.password) }}
+      {{ form_label(form.password.first) }}
+      {{ form_widget(form.password.first) }}
+      {{ form_errors(form.password.first) }}
     </div>
   </div>
+  <div class="form_group last">
+      {{ form_label(form.password.second) }}
+      {{ form_widget(form.password.second) }}
+      {{ form_errors(form.password.second) }}
+    </div>
   <div class="form_group">
-    <button type="submit" class="btn btn_white">Valider</button>
-    <span class="error_input"></span>
+      {{ form_widget(form.submit) }}
   </div>
-  </form>
+  {{ form_end(form) }}
 </section>
 {% endblock %}

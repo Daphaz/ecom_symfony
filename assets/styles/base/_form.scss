@@ -23,6 +23,13 @@
 		&.last {
 			margin-bottom: 4rem;
 		}
+		ul {
+			li {
+				margin-top: 0.5rem;
+				color: $red;
+				font-size: 1.6rem;
+			}
+		}
 	}
 	&_control {
 		@extend %flex_between;
@@ -32,14 +39,8 @@
 		}
 		.form_group {
 			&:last-child {
-				label {
-					text-align: right;
-				}
 				margin-left: 2rem;
 				@include c {
-					label {
-						text-align: left;
-					}
 					margin-left: 0;
 				}
 			}
