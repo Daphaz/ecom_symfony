@@ -17,10 +17,14 @@
           </button>
           <ul class="menu">
             {% if app.user %}
-            <li class="header_navitem item_mobile"><a href={{ path('home') }}>Home</a></li>
             <li class="header_navitem item_mobile"><a href={{ path('account') }} >Compte</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
             {% else %}
-            <li class="header_navitem item_mobile"><a href={{ path('home') }}>Home</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
             {% endif %}
             <li class="actions">
             <div class="globe">
@@ -53,13 +57,14 @@
             <nav class="header_navbar">
               <ul class="header_navlist">
                 {% if app.user %}
-                <li class="header_navitem"><a href={{ path('home') }}>Home</a></li>
                 <li class="header_navitem"><a href={{ path('account') }}>Compte</a></li>
-                <li class="header_navitem"><a href="#">Lorem</a></li>
-                <li class="header_navitem"><a href="#">Lorem</a></li>
-                <li class="header_navitem"><a href="#">Lorem</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
                 {% else %}
-                <li class="header_navitem"><a href={{ path('home') }}>Home</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
                 {% endif %}
               </ul>
             </nav>
