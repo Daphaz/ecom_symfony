@@ -11,6 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
 
 class RegisterType extends AbstractType
 {
@@ -18,13 +20,29 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-              'label' => 'Email'
+              'label' => 'Email',
+              'constraints' => new Email([
+                'message' => "Cet email {{ value }} n'est pas un email valide.",
+                'mode' => 'strict'
+              ])
             ])
             ->add('firstname', TextType::class, [
-              'label' => 'Votre prénom'
+              'label' => 'Votre prénom',
+              'constraints' => new Length([
+                'min' => 2,
+                'max' => 30,
+                'minMessage' => 'Votre prénom doit avoir au moins {{ limit }} charactères.',
+                'maxMessage' => 'Votre prénom doit avoir au maximum {{ limit }} charactères.'
+              ])
             ])
             ->add('lastname',TextType::class, [
-              'label' => 'Votre nom'
+              'label' => 'Votre nom',
+              'constraints' => new Length([
+                'min' => 2,
+                'max' => 30,
+                'minMessage' => 'Votre nom doit avoir au moins {{ limit }} charactères.',
+                'maxMessage' => 'Votre nom doit avoir au maximum {{ limit }} charactères.'
+              ])
             ])
             ->add('password', RepeatedType::class, [
               'type' => PasswordType::class,
