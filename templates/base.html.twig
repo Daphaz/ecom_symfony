@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="my first project symfony">
         <meta name="author" content="daphaz">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bienvenue sur la Boutique{% endblock %}</title>
         {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
     </head>
@@ -23,8 +23,8 @@
             <li class="header_navitem item_mobile"><a href="#">Lorem</a></li>
             <li class="actions">
             <div class="globe">
-              <a href="#" class="item_mobile">
-              <img src="{{ asset('/images/globe.svg')}}" alt="globe" width="50px" height="50px"/>
+              <a href="/inscription" class="item_mobile">
+              <img src="{{ asset('/images/user.svg')}}" alt="user" width="50px" height="50px"/>
               </a>
             </div> 
             <div class="panier">
@@ -42,7 +42,7 @@
               <span></span>
               <span></span>
             </div>
-            <div class="header_logo">Logo</div>
+            <div class="header_logo"><a href="/">Logo</a></div>
             <nav class="header_navbar">
               <ul class="header_navlist">
                 <li class="header_navitem"><a href="#">Lorem</a></li>
@@ -54,8 +54,8 @@
             </nav>
             <div class="header_actions">
             <div class="globe">
-              <a href="#">
-              <img src="{{ asset('/images/globe.svg')}}" alt="globe" width="25px" height="25px"/>
+              <a href="/inscription">
+              <img src="{{ asset('/images/user.svg')}}" alt="user" width="25px" height="25px"/>
               </a>
             </div> 
             <div class="panier">

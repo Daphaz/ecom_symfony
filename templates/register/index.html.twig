@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<section class="register container">
+  <h2 class="h2">Inscription</h2>
+  {{ form_start(form,{'attr': {'class': 'form'}}) }}
+  <div class="form_control">
+    <div class="form_group">
+      {{ form_label(form.firstname) }}
+      {{ form_widget(form.firstname) }}
+      {{ form_errors(form.firstname) }}
+    </div>
+    <div class="form_group">
+      {{ form_label(form.lastname) }}
+      {{ form_widget(form.lastname) }}
+      {{ form_errors(form.lastname) }}
+    </div>
+  </div>
+  <div class="form_control">
+    <div class="form_group">
+      {{ form_label(form.email) }}
+      {{ form_widget(form.email) }}
+      {{ form_errors(form.email) }}
+    </div>
+    <div class="form_group">
+      {{ form_label(form.password.first) }}
+      {{ form_widget(form.password.first) }}
+      {{ form_errors(form.password.first) }}
+    </div>
+  </div>
+  <div class="form_group last">
+      {{ form_label(form.password.second) }}
+      {{ form_widget(form.password.second) }}
+      {{ form_errors(form.password.second) }}
+    </div>
+  <div class="form_group">
+      {{ form_widget(form.submit) }}
+  </div>
+  <div class="form_group">
+      <a class="links" href="/connexion">Vous avez déjà un compte ?</a>
+  </div>
+  {{ form_end(form) }}
+</section>
+{% endblock %}

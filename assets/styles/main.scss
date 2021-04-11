@@ -5,7 +5,7 @@
 @import "abstracts/variables", "abstracts/placeholders", "abstracts/mixins";
 
 // Base
-@import "base/base", "base/typography";
+@import "base/base", "base/typography", "base/form", "base/alert";
 
 // Layout
 @import "./layout/page", "./layout/header", "./layout/footer";
@@ -15,6 +15,7 @@
 	"./components/productFeatured", "./components/bestProduct";
 
 // Pages
+@import "./pages/register", "./pages/account";
 
 //Vendor
 @import "./vendor/owl.carousel", "./vendor/owl.theme.default";
