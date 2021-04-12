@@ -11,7 +11,7 @@
 			font-weight: 600;
 			margin-bottom: 1.6rem;
 		}
-		input {
+		input[type="text"] {
 			@include fo;
 			font-size: 1.6rem;
 			height: 4rem;
@@ -54,6 +54,29 @@
 					margin-left: 0;
 				}
 			}
+		}
+	}
+	&_check {
+		@extend %flex_align;
+		margin-bottom: 1.6rem;
+		label {
+			@include fc;
+			font-size: 2rem;
+			font-weight: 600;
+			margin-left: 1rem;
+			cursor: pointer;
+		}
+		input[type="checkbox"] {
+			appearance: auto;
+			vertical-align: middle;
+		}
+	}
+	&_list {
+		@include c {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
 		}
 	}
 }

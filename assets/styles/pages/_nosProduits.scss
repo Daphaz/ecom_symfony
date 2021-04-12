@@ -2,21 +2,61 @@
 	@extend %flex_col;
 	align-items: center;
 	justify-content: center;
-	&_grid {
+
+	&_row {
+		width: 100%;
+		@extend %flex_between;
+		align-items: flex-start;
 		margin: 10rem 0;
+		@include x {
+			margin: 7rem 0;
+		}
+		@include c {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&_filter {
+		flex-shrink: 0;
+		padding: 0 1.6rem;
+		width: 30%;
+		.filter_list {
+			@extend %flex_col;
+		}
+		@include c {
+			padding: 0;
+			width: 100%;
+			margin-bottom: 2.4rem;
+		}
+	}
+
+	&_field {
+		input {
+			width: 90%;
+			@include c {
+				width: 100%;
+			}
+		}
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&_grid {
+		width: 70%;
 		display: grid;
-		grid-template-columns: repeat(4, 20vw);
+		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: 1fr;
 		gap: 2rem;
 		@include x {
-			grid-template-columns: repeat(2, minmax(16rem, 32rem));
-			grid-template-rows: repeat(2, minmax(21rem, 42rem));
-			margin: 7rem 0;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
 		}
 		@include c {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			width: 100%;
 		}
 	}
 	&_item {
