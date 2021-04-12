@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block body %}
+<section class="product container">
+  <div class="product_content">
+    <h2 class="h4">{{ product.name }}</h2>
+    <p class="product_subtitle">{{ product.subtitle }}</p>
+    <p class="product_description">{{ product.description }}</p>
+    <div class="product_footer">
+    <div class="product_category">
+      <span>{{ product.category }}</span>
+    </div>
+      <div class="product_price">
+        <span>{{ (product.price / 100)|number_format(2,',','.') }} €</span>
+      </div>
+    </div>
+  </div>
+  <div class="product_illustration">
+    <div class="outline">
+    <div class="product_img">
+      <img src="/uploads/{{ product.illustration }}" alt="{{ product.subtitle }}">
+    </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
