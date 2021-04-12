@@ -105,4 +105,10 @@
 			transition: transform 0.3s ease;
 		}
 	}
+	&_cta {
+		margin-top: 2rem;
+		@include x {
+			text-align: center;
+		}
+	}
 }
