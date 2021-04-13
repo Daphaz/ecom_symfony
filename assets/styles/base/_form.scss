@@ -11,7 +11,11 @@
 			font-weight: 600;
 			margin-bottom: 1.6rem;
 		}
-		input[type="text"] {
+		input[type="text"],
+		input[type="tel"],
+		select {
+			outline: none;
+			border: none;
 			@include fo;
 			font-size: 1.6rem;
 			height: 4rem;
@@ -52,6 +56,16 @@
 				margin-left: 2rem;
 				@include c {
 					margin-left: 0;
+				}
+			}
+		}
+		&.tree {
+			.form_group {
+				&:nth-child(2) {
+					margin: 0 2rem;
+					@include c {
+						margin: 0;
+					}
 				}
 			}
 		}

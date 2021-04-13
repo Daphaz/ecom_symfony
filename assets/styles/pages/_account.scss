@@ -11,6 +11,26 @@
 			font-size: 3.2rem;
 		}
 	}
+	&_row {
+		width: 100%;
+		@extend %flex_between;
+		.account_subtitle {
+			text-align: left;
+		}
+		@include c {
+			flex-direction: column;
+		}
+	}
+	&_add {
+		@include c {
+			width: 100%;
+			text-align: center;
+			.btn_add {
+				width: 100%;
+				padding: 1rem;
+			}
+		}
+	}
 	&_subtitle {
 		width: 100%;
 		font-size: 2rem;
@@ -37,5 +57,29 @@
 				font-size: 1.8rem;
 			}
 		}
+	}
+	&_noitem {
+		margin-top: 10rem;
+		width: 100%;
+		text-align: center;
+		font-size: 2.4rem;
+		a {
+			text-decoration: underline;
+			color: inherit;
+		}
+		@include c {
+			font-size: 2rem;
+			margin-top: 7rem;
+		}
+		@include v {
+			font-size: 1.8rem;
+			margin-top: 5rem;
+		}
+	}
+	&_cards {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
 	}
 }
