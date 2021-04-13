@@ -21,10 +21,14 @@
 			padding: 1.2rem 2rem;
 		}
 	}
-	&_close {
+	&_close,
+	&_quantity,
+	&_card {
 		padding: 0;
 	}
-	&_quantity {
-		padding: 0;
+	&_add {
+		@extend %flex_center;
+		padding: 0.5rem;
+		background-color: $purple;
 	}
 }
