@@ -1,6 +1,6 @@
 {% import 'macros/breadcrumbs.html.twig' as breadcrumbs %}
 {% extends 'base.html.twig' %}
-{% block title %}Ajouter une addresse{% endblock %}
+{% block title %}Gérer mes addresse{% endblock %}
 
 {% block body %}
 <section class="account container">
@@ -10,7 +10,7 @@
       {'url': url('account_address'), 'text': 'Addresse'},
       {'text': 'Ajouter une addresse'},
   ]) }}
-  <h1 class="h1">Ajouter une addresse</h1>
+  <h1 class="h1">Gérer mes addresses</h1>
   {{ form_start(form,{'attr': {'class': 'form'}}) }}
     <div class="form_group">
       {{ form_label(form.name) }}
