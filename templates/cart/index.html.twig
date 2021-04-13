@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier{% endblock %}
+
+{% block body %}
+<section class="cart container">
+  <h2 class="h2">Mon panier</h2>
+  <p class="cart_subtitle">retourver tous vos articles dans votre panier</p>
+  {% if cart|length > 0 %}
+  <div class="cart_list">
+    <h4 class="h5">Liste des produits</h4>
+    <div class="table_wrap">
+      <table class="table">
+        <thead class="table_thead">
+          <tr>
+            <th>&nbsp;</th>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantiter</th>
+            <th>total</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set total = null %}
+          {% for item in cart %}
+            <tr class="table_item">
+              <td>
+                <div class="table_img" style="background-image: url('uploads/{{ item.product.illustration }}');"></div>
+              </td>
+              <td>
+                <div class="table_desciption">
+                  <span>{{ item.product.name }}</span>
+                  <span>{{ item.product.subtitle }}</span>
+                </div>
+              </td>
+              <td>{{ (item.product.price / 100)|number_format(2,',','.') }} €</td>
+              <td class="table_quantity">
+                <a href={{ path('decrease_quantity_to_cart',{'id': item.product.id }) }} class="btn btn_quantity">
+                  <img src={{ asset('/images/minus.svg') }} alt="remove quantity product" width="16px" height="10px">
+                </a>
+                <p>{{ item.quantity }}</p>
+                <a href={{ path('add_to_cart',{'id': item.product.id }) }} class="btn btn_quantity">
+                  <img src={{ asset('/images/plus.svg') }} alt="add quantity product" width="16px" height="10px">
+                </a>
+              </td>
+              <td>{{ ((item.quantity * item.product.price) / 100)|number_format(2,',','.') }} €</td>
+              <td>
+                <a href={{ path('delete_to_cart',{'id': item.product.id})}} class="btn btn_close">
+                  <img src={{ asset('/images/trash.svg') }} alt="x" width="16px" height="auto">
+                </a>
+              </td>
+            </tr>
+          {% set total = total + (item.quantity * item.product.price) %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="cart_total">
+      <div class="cart_products">
+        <h6 class="h6">Nombre de produits: <strong>{{ cart|length }}</strong></h6>
+      </div>
+      <div class="cart_totalPrice">
+        <h6 class="h6">Total de mon panier: <strong>{{ (total / 100)|number_format(2,',','.') }} €</strong></h6>
+      </div>
+    </div>
+    <div class="cart_action">
+      <a href="#" class="btn btn_green">Valider mon panier</a>
+    </div>
+  </div>
+  {% else %}
+  <div class="cart_noitem">
+    <p class="h4">Vous n'avez pas encore de produit dans votre panier :(</p>
+    <a href={{ path('products') }} class="btn btn_white">Nos produits</a>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

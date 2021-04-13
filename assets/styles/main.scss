@@ -6,7 +6,7 @@
 
 // Base
 @import "base/base", "base/typography", "base/form", "base/alert",
-	"base/breadcrumb";
+	"base/breadcrumb", "base/table";
 
 // Layout
 @import "./layout/page", "./layout/header", "./layout/footer";
@@ -17,7 +17,7 @@
 
 // Pages
 @import "./pages/register", "./pages/account", "./pages/nosProduits",
-	"./pages/product";
+	"./pages/product", "./pages/cart";
 
 //Vendor
 @import "./vendor/owl.carousel", "./vendor/owl.theme.default";
