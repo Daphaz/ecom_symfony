@@ -36,11 +36,11 @@
               </td>
               <td>{{ (item.product.price / 100)|number_format(2,',','.') }} €</td>
               <td class="table_quantity">
-                <a href="#" class="btn btn_quantity">
+                <a href={{ path('decrease_quantity_to_cart',{'id': item.product.id }) }} class="btn btn_quantity">
                   <img src={{ asset('/images/minus.svg') }} alt="remove quantity product" width="16px" height="10px">
                 </a>
                 <p>{{ item.quantity }}</p>
-                <a href="#" class="btn btn_quantity">
+                <a href={{ path('add_to_cart',{'id': item.product.id }) }} class="btn btn_quantity">
                   <img src={{ asset('/images/plus.svg') }} alt="add quantity product" width="16px" height="10px">
                 </a>
               </td>

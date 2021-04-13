@@ -3,38 +3,19 @@
 namespace App\Controller;
 
 use App\Classes\Cart;
-use App\Entity\Product;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
-
-    private $entityManager;
-
-    public function __construct(EntityManagerInterface $entityManager)
-    {
-      $this->entityManager = $entityManager;
-    }
-
     /**
      * @Route("/mon-panier", name="cart")
      */
     public function index(Cart $cart): Response
     {
-        $cartComplete = [];
-
-        foreach($cart->get() as $id => $quantity){
-          $cartComplete[] = [
-            'product' => $this->entityManager->getRepository(Product::class)->findOneById($id),
-            'quantity' => $quantity
-          ];
-        }
-
         return $this->render('cart/index.html.twig',[
-          'cart' => $cartComplete,
+          'cart' => $cart->getFull(),
         ]);
     }
 
@@ -65,6 +46,16 @@ class CartController extends AbstractController
     public function delete(Cart $cart, $id): Response
     {
         $cart->deleteOne($id);
+
+        return $this->redirectToRoute('cart');
+    }
+
+    /**
+     * @Route("/cart/decrease-quantity/{id}", name="decrease_quantity_to_cart")
+     */
+    public function decreaseQuantity(Cart $cart, $id): Response
+    {
+        $cart->decreaseQuantity($id);
 
         return $this->redirectToRoute('cart');
     }
