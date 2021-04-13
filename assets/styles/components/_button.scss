@@ -22,9 +22,9 @@
 		}
 	}
 	&_close {
-		background-color: $red;
-		color: $gray;
-		padding: 0.8rem 1.2rem;
-		border-radius: 5px;
+		padding: 0;
+	}
+	&_quantity {
+		padding: 0;
 	}
 }

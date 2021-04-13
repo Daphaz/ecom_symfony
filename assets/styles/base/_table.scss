@@ -22,9 +22,9 @@
 		vertical-align: bottom;
 		border: none;
 		padding: 3rem;
-		font-size: 1.3rem;
+		font-size: 1.6rem;
 		font-weight: 600;
-		color: $white;
+		color: $gray-dark;
 	}
 
 	tbody {
@@ -68,6 +68,12 @@
 	}
 
 	&_quantity {
-		width: 10%;
+		button,
+		p {
+			display: inline-block;
+		}
+		p {
+			padding: 0 1.6rem;
+		}
 	}
 }

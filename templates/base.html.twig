@@ -39,7 +39,7 @@
               {% endif %}
             </div> 
             <div class="panier">
-              <a href="#" class="item_mobile">
+              <a href={{ path('cart') }} class="item_mobile">
               <img src="{{ asset('/images/panier.svg')}}" alt="panier" width="50px" height="50px"/>
               </a>
             </div>
@@ -81,7 +81,7 @@
               {% endif %}
             </div> 
             <div class="panier">
-              <a href="#">
+              <a href={{ path('cart') }}>
               <img src="{{ asset('/images/panier.svg')}}" alt="panier" width="25px" height="25px"/>
               </a>
             </div>
