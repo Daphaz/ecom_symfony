@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +18,11 @@
           <ul class="menu">
             {% if app.user %}
             <li class="header_navitem item_mobile"><a href={{ path('account') }} >Compte</a></li>
-            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
             <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
             <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
             {% else %}
-            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
             <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
             <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
             {% endif %}
@@ -58,11 +58,11 @@
               <ul class="header_navlist">
                 {% if app.user %}
                 <li class="header_navitem"><a href={{ path('account') }}>Compte</a></li>
-                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
                 <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
                 <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
                 {% else %}
-                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Nos produits</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
                 <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
                 <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
                 {% endif %}

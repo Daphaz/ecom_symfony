@@ -16,7 +16,8 @@
 	"./components/productFeatured", "./components/bestProduct";
 
 // Pages
-@import "./pages/register", "./pages/account";
+@import "./pages/register", "./pages/account", "./pages/nosProduits",
+	"./pages/product";
 
 //Vendor
 @import "./vendor/owl.carousel", "./vendor/owl.theme.default";
