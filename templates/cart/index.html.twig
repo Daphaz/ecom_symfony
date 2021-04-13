@@ -3,5 +3,64 @@
 {% block title %}Mon panier{% endblock %}
 
 {% block body %}
-<div>Test Cart</div>
+<section class="cart container">
+  <h2 class="h2">Mon panier</h2>
+  <p class="cart_subtitle">retourver tous vos articles dans votre panier</p>
+  <div class="cart_list">
+    <h4 class="h5">Liste des produits</h4>
+    {{ dump(cart) }}
+    <div class="table_wrap">
+      <table class="table">
+        <thead class="table_thead">
+          <tr>
+            <th>&nbsp;</th>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantiter</th>
+            <th>total</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set total = null %}
+          {% for item in cart %}
+            <tr class="table_item">
+              <td>
+                <div class="table_img" style="background-image: url('uploads/{{ item.product.illustration }}');"></div>
+              </td>
+              <td>
+                <div class="table_desciption">
+                  <span>{{ item.product.name }}</span>
+                  <span>{{ item.product.subtitle }}</span>
+                </div>
+              </td>
+              <td>{{ (item.product.price / 100)|number_format(2,',','.') }} €</td>
+              <td class="table_quantity">
+                {{ item.quantity }}
+              </td>
+              <td>{{ ((item.quantity * item.product.price) / 100)|number_format(2,',','.') }} €</td>
+              <td>
+                <button type="button" class="btn btn_close">
+                  <span>x</span>
+                </button>
+              </td>
+            </tr>
+          {% set total = total + (item.quantity * item.product.price) %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="cart_total">
+      <div class="cart_products">
+        <h6 class="h6">Nombre de produits: <strong>{{ cart|length }}</strong></h6>
+      </div>
+      <div class="cart_totalPrice">
+        <h6 class="h6">Total de mon panier: <strong>{{ (total / 100)|number_format(2,',','.') }} €</strong></h6>
+      </div>
+    </div>
+    <div class="cart_action">
+      <a href="#" class="btn btn_green">Valider mon panier</a>
+    </div>
+  </div>
+</section>
 {% endblock %}

@@ -12,4 +12,19 @@
 			padding: 1.2rem 2rem;
 		}
 	}
+	&_green {
+		background-color: $green;
+		color: $gray-dark;
+		font-size: 2.4rem;
+		@include v {
+			font-size: 1.6rem;
+			padding: 1.2rem 2rem;
+		}
+	}
+	&_close {
+		background-color: $red;
+		color: $gray;
+		padding: 0.8rem 1.2rem;
+		border-radius: 5px;
+	}
 }
