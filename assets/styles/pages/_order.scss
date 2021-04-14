@@ -1,0 +1,102 @@
+.order {
+	padding-top: 7rem;
+	height: 100%;
+	h2 {
+		@include c {
+			font-size: 3.2rem;
+		}
+		@include v {
+			font-size: 2.8rem;
+		}
+	}
+	&_title {
+		font-size: 2rem;
+		margin: 1.6rem 0;
+	}
+	&_row {
+		display: flex;
+		width: 100%;
+		gap: 2rem;
+		padding-top: 1.6rem;
+		@include c {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+	&_col {
+		flex: 50%;
+		.order_row {
+			justify-content: space-between;
+			align-items: center;
+			.table {
+				&_desciption {
+					text-align: right;
+					@include c {
+						text-align: center;
+					}
+				}
+			}
+		}
+		@include c {
+			flex: 100%;
+			width: 100%;
+		}
+		&.order2 {
+			@include c {
+				order: 2;
+			}
+		}
+		&.order1 {
+			@include c {
+				order: 1;
+			}
+		}
+	}
+	&_label {
+		font-size: 1.6rem;
+		font-weight: bold;
+		margin-bottom: 1.6rem;
+		@include c {
+			text-align: center;
+		}
+	}
+
+	&_total {
+		width: 100%;
+		@extend %flex_between;
+		flex-wrap: wrap;
+		gap: 2rem;
+		@include c {
+			gap: 1.6rem;
+		}
+		span {
+			padding: 1.6rem 0;
+			display: block;
+			font-size: 1.8rem;
+			font-weight: bold;
+			@include c {
+				width: 100%;
+				padding: 0;
+				&:first-child {
+					padding-top: 1.6rem;
+				}
+			}
+		}
+	}
+
+	&_action {
+		flex-shrink: 0;
+		width: 100%;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+		a {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	&_add {
+		margin-bottom: 1.6rem;
+	}
+}

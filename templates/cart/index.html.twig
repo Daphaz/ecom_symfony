@@ -26,7 +26,7 @@
           {% for item in cart %}
             <tr class="table_item">
               <td>
-                <div class="table_img" style="background-image: url('uploads/{{ item.product.illustration }}');"></div>
+                <div class="table_img" style="background-image: url('/uploads/{{ item.product.illustration }}');"></div>
               </td>
               <td>
                 <div class="table_desciption">
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="cart_action">
-      <a href="#" class="btn btn_green">Valider mon panier</a>
+      <a href={{ path('order') }} class="btn btn_green">Valider mon panier</a>
     </div>
   </div>
   {% else %}

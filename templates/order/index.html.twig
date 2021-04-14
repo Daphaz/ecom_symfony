@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+<section class="order container">
+<h2 class="h2">Commande</h2>
+<p class="order_title">Choisissez vos préférences avant de passer commande...</p>
+<hr>
+<div class="order_row">
+  <div class="order_col order2">
+      <p class="order_label">choisir mon addresse de livraison</p>
+      <div class="order_add">
+        <a href={{ path('account_address_add') }} class="btn btn_blue">
+          <img src={{ asset('images/plus.svg') }} width="20px" height="20px"  alt="add addresse">
+        </a>
+      </div>
+      {{ form_start(form,{'attr': {'class': 'form'}, action:path('order_recap')}) }}
+      <div class="form_list">
+        {% for address in form.addresses %}
+          <div class="form_check">
+            {% set formHtml %}
+            {{ form_widget(address) }}
+            {{ form_label(address) }}
+            {{ form_errors(address) }}
+            {% endset %}
+            {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
+          </div>
+        {% endfor %}
+      </div>
+      <p class="order_label">Choisir mon transporteur</p>
+      <div class="form_list">
+        {% for carrier in form.carriers %}
+          <div class="form_check">
+            {% set formHtml %}
+            {{ form_widget(carrier) }}
+            {{ form_label(carrier) }}
+            {{ form_errors(carrier) }}
+            {% endset %}
+            {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="form_group last">
+        {{ form_widget(form.submit) }}
+      </div>
+      {{ form_end(form) }}
+  </div>
+  <div class="order_col order1">
+    <p class="order_label">Récapitualitif de ma commande</p>
+    {% for item in cart %}
+      <div class="order_row">
+        <div class="table_img" style="background-image: url('/uploads/{{ item.product.illustration }}');"></div>
+        <p>{{ item.quantity }}</p>
+        <div class="table_desciption">
+          <span>{{ item.product.name }}</span>
+          <span>{{ item.product.subtitle }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+{% endblock %}
