@@ -21,6 +21,15 @@
 			padding: 1.2rem 2rem;
 		}
 	}
+	&_purple {
+		background-color: $purple;
+		color: $gray-dark;
+		font-size: 2.4rem;
+		@include v {
+			font-size: 1.6rem;
+			padding: 1.2rem 2rem;
+		}
+	}
 	&_close,
 	&_quantity,
 	&_card {

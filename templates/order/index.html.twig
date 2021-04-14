@@ -36,11 +36,23 @@
           </div>
         {% endfor %}
       </div>
+      <div class="form_group last">
+        {{ form_widget(form.submit) }}
+      </div>
       {{ form_end(form) }}
   </div>
   <div class="order_col">
-    <p>Récap de ma commande</p>
-    <p>Bouton pour payer</p>
+    <p class="order_label">Récapitualitif de ma commande</p>
+    {% for item in cart %}
+      <div class="order_row">
+        <div class="table_img" style="background-image: url('uploads/{{ item.product.illustration }}');"></div>
+        <p>{{ item.quantity }}</p>
+        <div class="table_desciption">
+          <span>{{ item.product.name }}</span>
+          <span>{{ item.product.subtitle }}</span>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
 </section>
