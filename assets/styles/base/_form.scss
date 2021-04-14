@@ -82,7 +82,8 @@
 			margin-left: 1rem;
 			cursor: pointer;
 		}
-		input[type="checkbox"] {
+		input[type="checkbox"],
+		input[type="radio"] {
 			appearance: auto;
 			vertical-align: middle;
 		}
@@ -93,6 +94,12 @@
 			justify-content: space-between;
 			align-items: center;
 			flex-wrap: wrap;
+			gap: 2rem;
 		}
+	}
+	&_muted {
+		@include fo;
+		color: rgba(0, 0, 0, 0.3);
+		font-size: 2.2rem;
 	}
 }

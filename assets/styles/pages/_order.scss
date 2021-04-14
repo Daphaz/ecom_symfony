@@ -17,8 +17,19 @@
 		width: 100%;
 		gap: 2rem;
 		padding-top: 1.6rem;
+		@include c {
+			flex-direction: column;
+		}
 	}
 	&_col {
 		flex: 50%;
+	}
+	&_label {
+		font-size: 1.6rem;
+		font-weight: bold;
+		margin-bottom: 1.6rem;
+		@include c {
+			text-align: center;
+		}
 	}
 }
