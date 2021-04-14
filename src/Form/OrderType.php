@@ -33,7 +33,7 @@ class OrderType extends AbstractType
               'expanded' => true,
             ])
             ->add('submit', SubmitType::class, [
-              'label' => "payer",
+              'label' => "valider ma commande",
               'attr' => [
                 'class' => 'btn btn_purple'
               ]

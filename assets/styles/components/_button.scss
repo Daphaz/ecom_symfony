@@ -40,4 +40,11 @@
 		padding: 0.5rem;
 		background-color: $purple;
 	}
+	&_blue {
+		@extend %flex_center;
+		max-width: 150px;
+		padding: 0.5rem;
+		background-color: $blue;
+		margin-right: auto;
+	}
 }

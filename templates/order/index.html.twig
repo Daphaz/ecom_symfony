@@ -8,9 +8,14 @@
 <p class="order_title">Choisissez vos préférences avant de passer commande...</p>
 <hr>
 <div class="order_row">
-  <div class="order_col">
+  <div class="order_col order2">
       <p class="order_label">choisir mon addresse de livraison</p>
-      {{ form_start(form,{'attr': {'class': 'form'}}) }}
+      <div class="order_add">
+        <a href={{ path('account_address_add') }} class="btn btn_blue">
+          <img src={{ asset('images/plus.svg') }} width="20px" height="20px"  alt="add addresse">
+        </a>
+      </div>
+      {{ form_start(form,{'attr': {'class': 'form'}, action:path('order_recap')}) }}
       <div class="form_list">
         {% for address in form.addresses %}
           <div class="form_check">
@@ -41,11 +46,11 @@
       </div>
       {{ form_end(form) }}
   </div>
-  <div class="order_col">
+  <div class="order_col order1">
     <p class="order_label">Récapitualitif de ma commande</p>
     {% for item in cart %}
       <div class="order_row">
-        <div class="table_img" style="background-image: url('uploads/{{ item.product.illustration }}');"></div>
+        <div class="table_img" style="background-image: url('/uploads/{{ item.product.illustration }}');"></div>
         <p>{{ item.quantity }}</p>
         <div class="table_desciption">
           <span>{{ item.product.name }}</span>

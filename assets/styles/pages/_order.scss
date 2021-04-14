@@ -1,5 +1,6 @@
 .order {
-	margin-top: 7rem;
+	padding-top: 7rem;
+	height: 100%;
 	h2 {
 		@include c {
 			font-size: 3.2rem;
@@ -39,13 +40,14 @@
 		}
 		@include c {
 			flex: 100%;
+			width: 100%;
 		}
-		&:first-child {
+		&.order2 {
 			@include c {
 				order: 2;
 			}
 		}
-		&:last-child {
+		&.order1 {
 			@include c {
 				order: 1;
 			}
@@ -58,5 +60,43 @@
 		@include c {
 			text-align: center;
 		}
+	}
+
+	&_total {
+		width: 100%;
+		@extend %flex_between;
+		flex-wrap: wrap;
+		gap: 2rem;
+		@include c {
+			gap: 1.6rem;
+		}
+		span {
+			padding: 1.6rem 0;
+			display: block;
+			font-size: 1.8rem;
+			font-weight: bold;
+			@include c {
+				width: 100%;
+				padding: 0;
+				&:first-child {
+					padding-top: 1.6rem;
+				}
+			}
+		}
+	}
+
+	&_action {
+		flex-shrink: 0;
+		width: 100%;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+		a {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	&_add {
+		margin-bottom: 1.6rem;
 	}
 }
