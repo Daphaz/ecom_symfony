@@ -60,7 +60,7 @@
     var stripe = Stripe("pk_test_51IgxTXKVY4aQ8AGQzt8p3a9ao6sslV8Zx97Bxmv21nOhJUc0n0IIfEQuFTUX1bZLYbsiTem9kCyVGbIvE3zsoAA500j8olP0Ym");
     var checkoutButton = document.getElementById("checkout-button");
     checkoutButton.addEventListener("click", function () {
-      fetch("{{ path('stripe_create_session') }}/{{ reference }}", {
+      fetch("/commande/create-session/{{ reference }}", {
         method: "POST",
       })
         .then(function (response) {
