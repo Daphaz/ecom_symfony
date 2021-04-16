@@ -21,7 +21,7 @@
     <div class="order_item">
       <strong>{{ carrier.name }}</strong>
       <p>{{ carrier.description }}</p>
-      <p>{{ carrier.price|number_format(2,',','.') }} €</p>
+      <p>{{ (carrier.price / 100)|number_format(2,',','.') }} €</p>
     </div>
   </div>
   <div class="order_col">
@@ -43,11 +43,11 @@
     {% endfor %}
     <div class="order_total">
       <span>Sous-total : <strong>{{ (total / 100)|number_format(2,',','.') }} €</strong></span>
-      <span>Livraison : <strong>{{ carrier.price|number_format(2,',','.') }} €</strong></span>
-      <span>Total : <strong>{{ ((total / 100) + carrier.price)|number_format(2,',','.') }} €</strong></span>
+      <span>Livraison : <strong>{{ (carrier.price / 100)|number_format(2,',','.') }} €</strong></span>
+      <span>Total : <strong>{{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €</strong></span>
     </div>
     <div class="order_action">
-      <button type="button" id="checkout-button" class="btn btn_purple">Payer {{ ((total / 100) + carrier.price)|number_format(2,',','.') }} €</button>
+      <button type="button" id="checkout-button" class="btn btn_purple">Payer {{ ((total / 100) + (carrier.price / 100))|number_format(2,',','.') }} €</button>
     </div>
   </div>
 </div>
