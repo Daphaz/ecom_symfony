@@ -57,6 +57,10 @@
 		font-size: 1.6rem;
 		font-weight: bold;
 		margin-bottom: 1.6rem;
+		a {
+			text-decoration: underline;
+			color: $blue;
+		}
 		@include c {
 			text-align: center;
 		}
@@ -90,7 +94,8 @@
 		width: 100%;
 		margin-top: 2rem;
 		margin-bottom: 4rem;
-		a {
+		.btn {
+			width: 100%;
 			display: block;
 			text-align: center;
 		}
@@ -98,5 +103,9 @@
 
 	&_add {
 		margin-bottom: 1.6rem;
+	}
+
+	&_line {
+		margin: 1.6rem 0;
 	}
 }
