@@ -8,6 +8,8 @@ use App\Entity\OrderDetails;
 use App\Form\OrderType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use Stripe\Checkout\Session;
+use Stripe\Stripe;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -91,7 +93,32 @@ class OrderController extends AbstractController
           $this->entityManager->persist($orderDetails);
         }
 
-        $this->entityManager->flush();
+        //$this->entityManager->flush();
+
+        Stripe::setApiKey('sk_test_51IgxTXKVY4aQ8AGQ0fOeL1bQLpUYkciNodNIl9V5a6ZGX4hDgXiR4RSP06rCNPceWGsDm0gio2M7C5mCOrIRBfvA00phS5MYxb');
+
+        $YOUR_DOMAIN = 'http://127.0.0.1:800';
+
+        $checkout_session = Session::create([
+          'payment_method_types' => ['card'],
+          'line_items' => [[
+            'price_data' => [
+              'currency' => 'eur',
+              'unit_amount' => 2000,
+              'product_data' => [
+                'name' => 'Stubborn Attachments',
+                'images' => ["https://i.imgur.com/EHyR2nP.png"],
+              ],
+            ],
+            'quantity' => 1,
+          ]],
+          'mode' => 'payment',
+          'success_url' => $YOUR_DOMAIN . '/success.html',
+          'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
+        ]);
+
+        dump($checkout_session->id);
+        dd($checkout_session);
 
         return $this->render('order/add.html.twig',[
           'cart' => $cart->getFull(),
