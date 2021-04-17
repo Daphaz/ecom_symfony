@@ -11,10 +11,46 @@
     {'text': 'Mes commandes'},
 ]) }}
   <h1 class="h1">Mes Commandes</h1>
-  <div class="account_row">
     <div class="account_subtitle">
       <p>C'est dans cet espace que vous allez pouvoir gérer toutes vos commandes.</p>
     </div>
-  </div>
+    {% if app.user.orders|length == 0 %}
+      <div class="account_noitem">Vous n'avez pas ajouter d'addresse dans votre compte client, <a href={{ path('account_address_add') }}>Ajouter</a></div>
+    {% else %}
+        <div class="table_wrap">
+          <table class="table">
+            <thead class="table_thead">
+              <tr>
+                <th>Référence</th>
+                <th>Crée le</th>
+                <th>Produits(s)</th>
+                <th>Total</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr class="table_item">
+                  <td>
+                    <span>{{ order.reference }}</span>
+                  </td>
+                  <td>
+                    <span>{{ order.createdAt|date('d/m/Y') }}</span>
+                  </td>
+                  <td>
+                    <span>{{ order.orderDetails|length }}</span>
+                  </td>
+                  <td>
+                    <span>{{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2,',','.') }} €</span>
+                  </td>
+                  <td>
+                    <a href="#">Voir ma commande</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    {% endif %}
 </section>
 {% endblock %}
