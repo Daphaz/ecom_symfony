@@ -108,4 +108,10 @@
 	&_line {
 		margin: 1.6rem 0;
 	}
+
+	&_text {
+		@include fc;
+		margin-bottom: 1.6rem;
+		font-size: 2rem;
+	}
 }
