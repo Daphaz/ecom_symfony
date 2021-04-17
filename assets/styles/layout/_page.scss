@@ -1,0 +1,28 @@
+body {
+	background-color: $gray-medium;
+	color: $gray-dark;
+	@include fo;
+	font-size: 1.4rem;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	&.menu {
+		overflow: hidden;
+	}
+}
+
+.container {
+	padding: 0 12.8rem;
+	@include w {
+		padding: 0 6.4rem;
+	}
+	@include x {
+		padding: 0 3.2rem;
+	}
+	@include c {
+		padding: 0 1.6rem;
+	}
+}
+.warpper {
+	padding-top: 8rem;
+	min-height: 100vh;
+}

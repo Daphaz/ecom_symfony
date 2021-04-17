@@ -1,0 +1,105 @@
+.form {
+	width: 100%;
+	max-width: 65rem;
+	&_group {
+		@extend %flex_col;
+		margin: 1.6rem 0;
+		width: 100%;
+		label {
+			@include fc;
+			font-size: 2rem;
+			font-weight: 600;
+			margin-bottom: 1.6rem;
+		}
+		input[type="text"],
+		input[type="tel"],
+		input[type="email"],
+		input[type="password"],
+		select {
+			outline: none;
+			border: none;
+			@include fo;
+			font-size: 1.6rem;
+			height: 4rem;
+			width: 100%;
+			background-color: $gray;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			&:disabled {
+				background-color: $gray-dark;
+				color: $white;
+				cursor: not-allowed;
+			}
+		}
+		&.last {
+			margin-bottom: 4rem;
+		}
+		ul {
+			li {
+				margin-top: 0.5rem;
+				color: $red;
+				font-size: 1.6rem;
+			}
+		}
+		.links {
+			font-size: 1.6rem;
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+	&_control {
+		@extend %flex_between;
+		width: 100%;
+		@include c {
+			flex-direction: column;
+		}
+		.form_group {
+			&:last-child {
+				margin-left: 2rem;
+				@include c {
+					margin-left: 0;
+				}
+			}
+		}
+		&.tree {
+			.form_group {
+				&:nth-child(2) {
+					margin: 0 2rem;
+					@include c {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	&_check {
+		@extend %flex_align;
+		margin-bottom: 1.6rem;
+		label {
+			@include fc;
+			font-size: 2rem;
+			font-weight: 600;
+			margin-left: 1rem;
+			cursor: pointer;
+		}
+		input[type="checkbox"],
+		input[type="radio"] {
+			appearance: auto;
+			vertical-align: middle;
+		}
+	}
+	&_list {
+		@include c {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 2rem;
+		}
+	}
+	&_muted {
+		@include fo;
+		color: rgba(0, 0, 0, 0.3);
+		font-size: 2.2rem;
+	}
+}

@@ -1,0 +1,154 @@
+.header {
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 8px 32px 0 rgba(238, 181, 203, 0.37);
+	backdrop-filter: blur(4.5px);
+	-webkit-backdrop-filter: blur(4.5px);
+	transition: padding 0.3s ease;
+	z-index: 10;
+	&_container {
+		@extend %flex_between;
+		min-height: 7rem;
+	}
+	&_logo {
+		@include c {
+			margin: 0 auto;
+		}
+		a {
+			color: inherit;
+		}
+	}
+	&_burger {
+		@extend %flex_col;
+		display: none;
+		cursor: pointer;
+		position: absolute;
+		width: 25px;
+		height: 35px;
+		justify-content: center;
+		align-items: center;
+		span {
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: $gray-dark;
+			border-radius: 999px;
+			@include nl {
+				margin-bottom: 0.5rem;
+			}
+		}
+		@include c {
+			display: flex;
+		}
+	}
+	&_navbar {
+		margin: 0 3.2rem;
+		@include c {
+			display: none;
+		}
+	}
+	&_navlist {
+		@extend %flex_center;
+	}
+	&_navitem {
+		font-size: 2rem;
+		@include x {
+			font-size: 1.4rem;
+		}
+		&:not(:last-child) {
+			margin-right: 4.8rem;
+		}
+		a {
+			position: relative;
+			color: inherit;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				right: 0;
+				width: 0;
+				height: 2px;
+				margin-top: 5px;
+				background-color: $gray-dark;
+				transition: 0.4s ease;
+			}
+			&:hover {
+				&:after {
+					width: 100%;
+					left: 0;
+					background-color: $gray-dark;
+				}
+			}
+		}
+	}
+	&_actions {
+		@extend %flex_center;
+		@include c {
+			display: none;
+		}
+		.globe {
+			margin: 0 2rem;
+		}
+	}
+
+	&_mobile {
+		position: relative;
+		width: 90%;
+		background-color: $white;
+		z-index: 20;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		.close {
+			position: absolute;
+			top: 1.6rem;
+			right: 2rem;
+			width: 6rem;
+			height: 6rem;
+		}
+		.menu {
+			@extend %flex_col;
+			width: 100%;
+			height: 100%;
+			padding: 6rem 2.4rem 2.4rem;
+			.header_navitem {
+				font-size: 3.2rem;
+				@include fc;
+				&:first-child {
+					margin-top: 2rem;
+				}
+				@include nl {
+					margin-bottom: 2.4rem;
+				}
+			}
+			.actions {
+				@extend %flex_center;
+				margin-top: auto;
+				align-self: flex-end;
+				.globe {
+					margin-right: 2rem;
+				}
+			}
+		}
+	}
+}
+.bg_mobile {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 20;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease-in-out;
+	@include c {
+		display: flex;
+	}
+	&.active {
+		transform: translateX(0%);
+	}
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de commande{% endblock %}
+
+{% block body %}
+<section class="order container">
+<h2 class="h2">Confirmation de commande</h2>
+<p class="order_title">
+  Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong><br>
+  Nous vous remercions pour votre commande n° {{ order.reference }},<br>
+  Une confirmation vient de vous être envoyé par email à l'adresse {{ order.user.email }}.
+</p>
+<hr class="order_line">
+<p class="order_title">
+  Votre commande seras envoyé par <strong>{{ order.carrierName }}</strong> à l'adresse suivante :<br>
+  {{ order.delivery|raw }}
+</p>
+<hr class="order_line">
+<div class="order_label">Pour suivre votre commande rendez-vous dans votre espace <a href="{{ path('account_order') }}">Mes commandes</a></div>
+</section>
+{% endblock %}

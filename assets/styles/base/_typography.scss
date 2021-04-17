@@ -1,0 +1,46 @@
+.h1,
+.h2,
+.h3 {
+	@include fc;
+	font-weight: 500;
+}
+.h4,
+.h5,
+.h6 {
+	@include fc;
+	font-weight: 600;
+}
+
+.h1 {
+	font-size: 56px;
+	line-height: (64/56);
+	letter-spacing: -1px;
+}
+
+.h2 {
+	font-size: 48px;
+	line-height: (56/48);
+	letter-spacing: -1px;
+}
+
+.h3 {
+	font-size: 40px;
+	line-height: (48/40);
+	letter-spacing: -1px;
+}
+
+.h4 {
+	font-size: 32px;
+	line-height: (40/32);
+	letter-spacing: -0.5px;
+}
+
+.h5 {
+	font-size: 24px;
+	line-height: (32/24);
+}
+
+.h6 {
+	font-size: 18px;
+	line-height: (24/18);
+}

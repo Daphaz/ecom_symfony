@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+<section class="hero">
+<div class="owl-carousel owl-carousel owl-loaded owl-drag">
+  <div class="hero_slider">
+    <div class="hero_wrap">
+      <h1 class="hero_title">Lorem ipsum dolor sit amet lorem ipsum dolor.</h1>
+      <p class="hero_subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsum soluta, dolorem recusandae ullam voluptatum cum labore nemo, rerum accusamus quod alias saepe ea fugiat cumque, aut numquam sint repellendus.</p>
+      <div class="hero_btn">
+        <button class="btn btn_white">Lorem ipsum dolor</button>
+      </div>
+    </div>
+    <div class="hero_preview">
+      <img src={{asset('/images/banner/slide1.jpg')}} alt="banner1" width="100%" height="100%"/>
+    </div>
+  </div>
+</div>
+</section>
+<section class="productFeatured container">
+  <div class="productFeatured_list">
+    <div class="productFeatured_product">
+      <div class="productFeatured_item">
+        <img src={{asset('/images/featured/featured-1.jpg')}} alt="product 1">
+        <div class="overlay">
+          <h3 class="h3">Lorem ipsum</h3>
+        </div>
+      </div>
+      <div class="productFeatured_label">
+        <h4 class="h4">Lorem</h4>
+      </div>
+    </div>
+    <div class="productFeatured_product">
+      <div class="productFeatured_item">
+        <img src={{asset('/images/featured/featured-2.jpg')}} alt="product 2">
+        <div class="overlay">
+          <h3 class="h3">Lorem ipsum</h3>
+        </div>
+      </div>
+      <div class="productFeatured_label">
+        <h4 class="h4">Lorem</h4>
+      </div>
+    </div>
+    <div class="productFeatured_product">
+      <div class="productFeatured_item">
+        <img src={{asset('/images/featured/featured-3.jpg')}} alt="product 3">
+        <div class="overlay">
+          <h3 class="h3">Lorem ipsum</h3>
+        </div>
+      </div>
+      <div class="productFeatured_label">
+        <h4 class="h4">Lorem</h4>
+      </div>
+    </div>
+    <div class="productFeatured_product">
+      <div class="productFeatured_item">
+        <img src={{asset('/images/featured/featured-4.jpg')}} alt="product 4">
+        <div class="overlay">
+          <h3 class="h3">Lorem ipsum</h3>
+        </div>
+      </div>
+      <div class="productFeatured_label">
+        <h4 class="h4">Lorem</h4>
+      </div>
+    </div>
+  </div>
+  <div class="productFeatured_link">
+    <a href="#">Voir le catalogue</a>
+  </div>
+</section>
+<section class="bestProduct container">
+  <div class="bestProduct_content">
+    <h2 class="h2">Lorem, ipsum dolor.</h2>
+    <p class="bestProduct_subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos?</p>
+    <button class="btn btn_white">acheter</button>
+  </div>
+  <div class="bestProduct_img">
+    <img src={{asset('/images/bestProduct/best-1.jpg')}} alt="best product" width="100%" height="100%">
+  </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+  {{ encore_entry_script_tags('home') }}
+{% endblock %}

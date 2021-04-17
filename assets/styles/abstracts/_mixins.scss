@@ -1,0 +1,53 @@
+//Fonts
+@mixin fo {
+	font-family: "Open Sans", sans-serif;
+}
+@mixin fc {
+	font-family: "Cinzel", serif;
+}
+
+//Selectors
+@mixin nl {
+	&:not(:last-child) {
+		@content;
+	}
+}
+@mixin nf {
+	&:not(:first-child) {
+		@content;
+	}
+}
+
+//breakpoint
+@mixin w {
+	@media screen and (max-width: "1419px") {
+		@content;
+	}
+}
+@mixin q {
+	@media screen and (max-width: "1235px") {
+		@content;
+	}
+}
+@mixin x {
+	@media screen and (max-width: "1023px") {
+		@content;
+	}
+}
+@mixin c {
+	@media screen and (max-width: "767px") {
+		@content;
+	}
+}
+@mixin v {
+	@media screen and (max-width: "474px") {
+		@content;
+	}
+}
+
+//Dark theme
+@mixin dark {
+	body.dark {
+		@content;
+	}
+}

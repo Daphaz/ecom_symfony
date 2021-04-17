@@ -1,0 +1,11 @@
+.register {
+	width: 100%;
+	@extend %flex_center;
+	flex-direction: column;
+	h2 {
+		margin-bottom: 3rem;
+		@include v {
+			font-size: 3rem;
+		}
+	}
+}

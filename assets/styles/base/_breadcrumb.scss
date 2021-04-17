@@ -1,0 +1,33 @@
+.breadcrumb {
+	align-self: flex-start;
+	margin-right: auto;
+	width: 100%;
+	&_list {
+		@extend %flex_align;
+		@include v {
+			flex-direction: column;
+		}
+	}
+	&_item {
+		@include fc;
+		font-size: 1.6rem;
+		@include v {
+			@include nl {
+				margin-bottom: 0.5rem;
+			}
+		}
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
+		&.active {
+			color: $blue;
+		}
+	}
+	&_divider {
+		margin: 0 1rem;
+		@include v {
+			display: none;
+		}
+	}
+}

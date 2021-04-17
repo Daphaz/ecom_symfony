@@ -1,0 +1,71 @@
+{% import 'macros/breadcrumbs.html.twig' as breadcrumbs %}
+{% extends 'base.html.twig' %}
+{% block title %}Gérer mes addresse{% endblock %}
+
+{% block body %}
+<section class="account container">
+  {{ breadcrumbs.render([
+      {'url': url('home'), 'text': 'Home'},
+      {'url': url('account'), 'text': 'Compte'},
+      {'url': url('account_address'), 'text': 'Addresse'},
+      {'text': 'Ajouter une addresse'},
+  ]) }}
+  <h1 class="h1">Gérer mes addresses</h1>
+  {{ form_start(form,{'attr': {'class': 'form'}}) }}
+    <div class="form_group">
+      {{ form_label(form.name) }}
+      {{ form_widget(form.name) }}
+      {{ form_errors(form.name) }}
+    </div>
+    <div class="form_control">
+      <div class="form_group">
+        {{ form_label(form.firstname) }}
+        {{ form_widget(form.firstname) }}
+        {{ form_errors(form.firstname) }}
+      </div>
+      <div class="form_group">
+        {{ form_label(form.lastname) }}
+        {{ form_widget(form.lastname) }}
+        {{ form_errors(form.lastname) }}
+      </div>
+    </div>
+    <div class="form_control">
+      <div class="form_group">
+        {{ form_label(form.company) }}
+        {{ form_widget(form.company) }}
+        {{ form_errors(form.company) }}
+      </div>
+        <div class="form_group">
+          {{ form_label(form.phone) }}
+          {{ form_widget(form.phone) }}
+          {{ form_errors(form.phone) }}
+        </div>
+    </div>
+    <div class="form_control tree">
+      <div class="form_group">
+        {{ form_label(form.postal) }}
+        {{ form_widget(form.postal) }}
+        {{ form_errors(form.postal) }}
+      </div>
+      <div class="form_group">
+        {{ form_label(form.city) }}
+        {{ form_widget(form.city) }}
+        {{ form_errors(form.city) }}
+      </div>
+      <div class="form_group">
+        {{ form_label(form.country) }}
+        {{ form_widget(form.country) }}
+        {{ form_errors(form.country) }}
+      </div>
+    </div>
+    <div class="form_group last">
+      {{ form_label(form.address) }}
+      {{ form_widget(form.address) }}
+      {{ form_errors(form.address) }}
+    </div>
+    <div class="form_group">
+        {{ form_widget(form.submit) }}
+    </div>
+  {{ form_end(form) }}
+</section>
+{% endblock %}

@@ -1,19 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="my first project symfony">
+        <meta name="author" content="daphaz">
+        <title>{% block title %}Bienvenue sur la Boutique{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}{% endblock %}
+        {% block headScript %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+      <div class="bg_mobile" id="mobile" >
+        <div class="header_mobile">
+          <button class="close" id="closeMenu">
+            <img src="{{ asset('/images/close.svg') }}" alt="close" width="60px" height="60px">
+          </button>
+          <ul class="menu">
+            {% if app.user %}
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Compte</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
+            {% else %}
+            <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+            <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
+            {% endif %}
+            <li class="actions">
+            <div class="globe">
+              {% if app.user %}
+              <a href={{ path('app_logout') }} class="item_mobile">
+              <img src="{{ asset('/images/logout.svg')}}" alt="deconnexion" width="50px" height="50px"/>
+              </a>
+              {% else %}
+              <a href={{ path('app_login') }} class="item_mobile">
+              <img src="{{ asset('/images/user.svg')}}" alt="connexion" width="50px" height="50px"/>
+              </a>
+              {% endif %}
+            </div> 
+            <div class="panier">
+              <a href={{ path('cart') }} class="item_mobile">
+              <img src="{{ asset('/images/panier.svg')}}" alt="panier" width="50px" height="50px"/>
+              </a>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="header container">
+          <div class="header_container">
+            <div class="header_burger" id="burger" >
+              <span></span>
+              <span></span>
+            </div>
+            <div class="header_logo"><a href={{ path('home') }}>Logo</a></div>
+            <nav class="header_navbar">
+              <ul class="header_navlist">
+                {% if app.user %}
+                <li class="header_navitem"><a href={{ path('account') }}>Compte</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
+                {% else %}
+                <li class="header_navitem item_mobile"><a href={{ path('products') }} >Nos produits</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Qui sommes nous ?</a></li>
+                <li class="header_navitem item_mobile"><a href={{ path('account') }} >Contact</a></li>
+                {% endif %}
+              </ul>
+            </nav>
+            <div class="header_actions">
+            <div class="globe">
+              {% if app.user %}
+              <a href={{ path('app_logout') }}>
+              <img src="{{ asset('/images/logout.svg')}}" alt="deconnexion" width="25px" height="25px"/>
+              </a>
+              {% else %}
+              <a href={{ path('app_login') }}>
+              <img src="{{ asset('/images/user.svg')}}" alt="connexion" width="25px" height="25px"/>
+              </a>
+              {% endif %}
+            </div> 
+            <div class="panier">
+              <a href={{ path('cart') }}>
+              <img src="{{ asset('/images/panier.svg')}}" alt="panier" width="25px" height="25px"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="warpper">
+          {% block body %}{% endblock %}
+        </div>
+      </main>
+      <footer class="footer container">
+        <div class="footer_links">
+          <ul class="compte">
+            <li class="footer_label">Compte</li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+          <ul class="contact">
+          <li class="footer_label">Contact</li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+          <ul class="categories">
+            <li class="footer_label">Categories</li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+          </ul>
+        </div>
+        <div class="footer_social">
+          <div class="phone">
+            <p>+33 00 11 22 33 44</p>
+          </div>
+          <div class="social_list">
+            <div class="social_item">
+              <img src={{asset('/images/insta.svg')}} alt="instagram logo" width="20px" height="20px">
+            </div>
+            <div class="social_item">
+              <img src={{asset('/images/facebook.svg')}} alt="facebook logo" width="20px" height="20px">
+            </div>
+            <div class="social_item">
+              <img src={{asset('/images/email.svg')}} alt="email" width="20px" height="20px">
+            </div>
+          </div>
+        </div>
+        <div class="footer_copy">Lorem, ipsum dolor 2021</div>
+      </footer>
+      {{ encore_entry_script_tags('app') }}
+      {% block javascripts %}{% endblock %}
     </body>
 </html>

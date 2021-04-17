@@ -1,0 +1,50 @@
+{% import 'macros/breadcrumbs.html.twig' as breadcrumbs %}
+{% extends 'base.html.twig' %}
+{% block title %}Mes Addresses{% endblock %}
+
+{% block body %}
+<section class="account container">
+  {{ breadcrumbs.render([
+      {'url': url('home'), 'text': 'Home'},
+      {'url': url('account'), 'text': 'Compte'},
+      {'text': 'Addresse'},
+  ]) }}
+  <h1 class="h1">Mes Addresses</h1>
+  <div class="account_row">
+    <div class="account_subtitle">
+      <p>C'est dans cet espace que vous allez pouvoir gérer toutes vos addresses.</p>
+    </div>
+    <div class="account_add">
+      <a href={{ path('account_address_add') }} class="btn btn_add">
+        <img src={{ asset('images/plus.svg') }} width="20px" height="20px"  alt="add addresse">
+      </a>
+    </div> 
+  </div>
+  {% if app.user.addresses|length == 0 %}
+    <div class="account_noitem">Vous n'avez pas ajouter d'addresse dans votre compte client, <a href={{ path('account_address_add') }}>Ajouter</a></div>
+  {% else %}
+    <div class="account_cards">
+      {% for address in app.user.addresses %}
+        <div class="card">
+          <div class="card_header">
+              <h5 class="h6">{{ address.name }}</h5>
+          </div>
+          <div class="card_body">
+            <p class="card_name">{{ address.firstname }} {{ address.lastname }}</p>
+            <p class="card_text">
+            {{ address.address }},<br/>
+            {{ address.postal }} - {{ address.city }} - {{ address.country }}
+            </p>
+          </div>
+          <div class="card_footer">
+            <a href={{ path('account_address_edit',{"id": address.id}) }} class="btn btn_card">Modifier</a>
+            <a href={{ path('account_address_delete',{"id": address.id}) }} class="btn btn_close">
+              <img src={{ asset('/images/trash.svg') }} alt="x" width="16px" height="auto">
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

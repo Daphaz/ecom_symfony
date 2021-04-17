@@ -1,0 +1,85 @@
+.account {
+	@extend %flex_col;
+	align-items: center;
+	h1 {
+		text-align: center;
+		margin-top: 2.4rem;
+		@include c {
+			font-size: 4.8rem;
+		}
+		@include v {
+			font-size: 3.2rem;
+		}
+	}
+	&_row {
+		width: 100%;
+		@extend %flex_between;
+		.account_subtitle {
+			text-align: left;
+		}
+		@include c {
+			flex-direction: column;
+		}
+	}
+	&_add {
+		@include c {
+			width: 100%;
+			text-align: center;
+			.btn_add {
+				width: 100%;
+				padding: 1rem;
+			}
+		}
+	}
+	&_subtitle {
+		width: 100%;
+		font-size: 2rem;
+		line-height: 1.5;
+		margin: 1.6rem 0;
+		text-align: center;
+		@include v {
+			font-size: 1.6rem;
+		}
+	}
+	&_links {
+		align-self: flex-start;
+		margin-top: 4rem;
+		@include v {
+			align-self: center;
+		}
+	}
+	&_link {
+		a {
+			color: inherit;
+			text-decoration: underline;
+			font-size: 2.4rem;
+			@include v {
+				font-size: 1.8rem;
+			}
+		}
+	}
+	&_noitem {
+		margin-top: 10rem;
+		width: 100%;
+		text-align: center;
+		font-size: 2.4rem;
+		a {
+			text-decoration: underline;
+			color: inherit;
+		}
+		@include c {
+			font-size: 2rem;
+			margin-top: 7rem;
+		}
+		@include v {
+			font-size: 1.8rem;
+			margin-top: 5rem;
+		}
+	}
+	&_cards {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+}
