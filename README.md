@@ -8,6 +8,7 @@
 
 - [Decription](#Description)
 - [My Goal](#My_Goals)
+- [Versions](#Versions)
 - [Credits](#Credits)
 
 ---
@@ -35,6 +36,12 @@
 - Déployer un site en production
 
 --- 
+
+## Versions
+
+v1.0.0 : espace utilisateur, dashboard
+
+---
 
 ## Credits
 > j'ai récupérer toutes les images sur le site de Pixel
