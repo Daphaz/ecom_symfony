@@ -1,0 +1,20 @@
+{% import 'macros/breadcrumbs.html.twig' as breadcrumbs %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes{% endblock %}
+
+{% block body %}
+<section class="account container">
+{{ breadcrumbs.render([
+    {'url': url('home'), 'text': 'Home'},
+    {'url': url('account'), 'text': 'Compte'},
+    {'text': 'Mes commandes'},
+]) }}
+  <h1 class="h1">Mes Commandes</h1>
+  <div class="account_row">
+    <div class="account_subtitle">
+      <p>C'est dans cet espace que vous allez pouvoir gérer toutes vos commandes.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
