@@ -2,9 +2,9 @@
 	margin-top: -8rem;
 	width: 100%;
 	&_slider {
+		position: relative;
 		@extend %flex_col;
 		justify-content: center;
-		position: relative;
 		width: 100%;
 		height: 100vh;
 		overflow: hidden;
@@ -18,11 +18,27 @@
 		@include c {
 			padding-left: 1.6rem;
 		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				to top right,
+				rgba(0, 0, 0, 0.5),
+				transparent
+			);
+		}
 	}
 	&_wrap {
 		position: relative;
 		z-index: 2;
 		max-width: 50%;
+		color: white;
 		@include c {
 			max-width: 80%;
 		}
@@ -80,6 +96,33 @@
 		@include v {
 			width: 100%;
 			text-align: center;
+		}
+	}
+	.owl-carousel {
+		.owl-dots {
+			&.disabled {
+				@extend %flex_align;
+				text-align: center;
+			}
+			position: absolute;
+			left: 50%;
+			bottom: 3.2rem;
+			transform: translateX(-50%);
+			z-index: 3;
+			.owl-dot {
+				flex-shrink: 0;
+				width: 2.4rem;
+				height: 2px;
+				border-radius: 1px;
+				background: $gray-medium;
+				transition: all 0.2s;
+				&:not(:last-child) {
+					margin-right: 4px;
+				}
+				&.active {
+					background-color: $gray-dark;
+				}
+			}
 		}
 	}
 }
