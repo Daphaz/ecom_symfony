@@ -13,6 +13,9 @@
   <p>Bienvenue {{ app.user.firstname }} dans votre compte. C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.</p>
 </div>
 <ul class="account_links">
+{% if is_granted('ROLE_ADMIN') %}
+<li class="account_link"><a href={{ path('admin') }}>Accéder au backoffice</a></li>
+{% endif %}
 <li class="account_link"><a href={{ path('account_password') }}>Modifier mon mot de passe</a></li>
 <li class="account_link"><a href={{ path('account_address') }}>Mes Addresses</a></li>
 <li class="account_link"><a href={{ path('account_order') }}>Mes Commandes</a></li>

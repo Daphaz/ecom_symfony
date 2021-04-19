@@ -22,6 +22,7 @@
             <thead class="table_thead">
               <tr>
                 <th>Référence</th>
+                <th>Status</th>
                 <th>Crée le</th>
                 <th>Produits(s)</th>
                 <th>Total</th>
@@ -33,6 +34,17 @@
                 <tr class="table_item">
                   <td>
                     <span>{{ order.reference }}</span>
+                  </td>
+                  <td>
+                    {% if order.state == 1 %}
+                    <span>Payée</span>
+                    {% elseif order.state == 2 %}
+                    <span>en Preparation</span>
+                    {% elseif order.state == 3 %}
+                    <span>en Livraison</span>
+                    {% else %}
+                    <span>Terminée</span>
+                    {% endif %}
                   </td>
                   <td>
                     <span>{{ order.createdAt|date('d/m/Y') }}</span>

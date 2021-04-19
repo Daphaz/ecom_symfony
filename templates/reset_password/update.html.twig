@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau du mot de passe{% endblock %}
+
+{% block body %}
+<section class="register container">
+  <h2 class="h2">Nouveau Mot de passe</h2>
+  {% for message in app.flashes('notice') %}
+    <div class="alert alert-info">{{ message }}</div>
+  {% endfor %}
+  {{ form_start(form,{'attr': {'class': 'form'}}) }}
+  <div class="form_group">
+    {{ form_label(form.password.first) }}
+    {{ form_widget(form.password.first) }}
+    {{ form_errors(form.password.first) }}
+  </div>
+  <div class="form_group last">
+    {{ form_label(form.password.second) }}
+    {{ form_widget(form.password.second) }}
+    {{ form_errors(form.password.second) }}
+  </div>
+  <div class="form_group">
+      {{ form_widget(form.submit) }}
+  </div>
+  {{ form_end(form) }}
+</section>
+{% endblock %}
