@@ -1,0 +1,24 @@
+.error {
+	margin-top: 4rem;
+	width: 100%;
+	height: 100%;
+	@extend %flex_col;
+	justify-content: center;
+	align-items: center;
+	h2 {
+		margin-bottom: 3rem;
+		@include v {
+			font-size: 3rem;
+		}
+	}
+	&_content {
+		text-align: center;
+		p {
+			font-size: 2rem;
+			padding: 2rem 0;
+		}
+		a {
+			margin-top: 4rem;
+		}
+	}
+}
