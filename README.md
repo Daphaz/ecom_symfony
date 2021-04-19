@@ -1,49 +1,50 @@
 # Ecommerce Symfony
 
->je découvre le framwork symfony à travers ce projet , un site e-commerce avec un backoffice (easyAdmin), un systeme de paiement (Stripe) et d'envoie d'email avec mailJet.
+>I discover the symfony framwork through this project, an e-commerce site with a backoffice (easyAdmin), a payment system (Stripe) and email sending with mailJet.
 
 ---
 
-## Sommaire
+## Contents
 
 - [Decription](#Description)
-- [My Goal](#My_Goals)
+- [My Goals](#My_Goals)
 - [Versions](#Versions)
 - [Credits](#Credits)
 
 ---
 
 ## Description
->Les utilisateurs pourront s'inscrire, se connecter, filtrer les produits, les mettre dans le panier, accéder au tunnel d'achat, payer et recevoir les emails de confirmation.
+>Users will be able to register, log in, filter products, put them in the cart, access the purchase tunnel, pay and receive confirmation emails.
 
->Les administrateurs pourront suivre les commandes, gérer les utilisateurs et les produits à travers une interface dédiée : easyAdmin.
+>Administrators can track orders, manage users and products through a dedicated interface: easyAdmin.
 
 ---
 
 ## My Goals
->L'objectif est d'apprendre les notions liées a Symfony 5 pour chaque étapes du projet
+>The objective is to learn the notions related to Symfony 5 for each step of the project
 
-- Développer un projet complet avec Symfony
-- Comprendre le moteur de template Twig
-- Utiliser les controllers et les routes
-- Les formulaires et la validation de données
-- Comprendre les entités, les relation et les tables dans Symfony 5
-- Créer une interface d'administration avec easyAdmin Bundle
-- Un systeme d'envoie d'email à l'aide d'un warpper php MailJet
-- Créer un tunnel d'achat en plusieurs étapes avec Stripe
-- Utiliser le composant Security
-- Gestion de la base de donnée dans un projet Symfony
-- Déployer un site en production
+- Developing a complete project with Symfony
+- Understanding the Twig template engine
+- Using controllers and routes
+- Forms and data validation
+- Understanding entities, relationships and tables in Symfony 5
+- Create an administration interface with easyAdmin Bundle
+- An email sending system using a MailJet php warpper
+- Create a multi-step buying tunnel with Stripe
+- Using the Security component
+- Database management in a Symfony project
+- Deploying a site in production
 
 --- 
 
 ## Versions
 
-v1.0.0 : espace utilisateur, dashboard
+v1.0.0 : user space, dashboard
+v1.1.0 : add email system, reset password
 
 ---
 
 ## Credits
-> j'ai récupérer toutes les images sur le site de Pixel
+> I got all the images from the Pixel website
 
-- pour le design je me suis inspiréré de [Kristina Demina](https://www.behance.net/christinadb297)
+- for the design I was inspired by [Kristina Demina](https://www.behance.net/christinadb297)
